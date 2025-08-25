@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>removing child while clicking & explore the delegating nature</h1>
+        <h3>various items</h3>
+        <ol id="list-items">
+            <li class="item-name">list item number - 1</li>
+            <li class="item-name">list item number - 2</li>
+            <li class="item-name">list item number - 3</li>
+            <li class="item-name">list item number - 4</li>
+            <li class="item-name">list item number - 5</li>
+            <li class="item-name">list item number - 6</li>
+            <li class="item-name">list item number - 7</li>
+        </ol>
+        <button id="btn-add-item">Add list items</button>
+    </main>
+
+    <script>
+    //   const items = document.getElementsByClassName('item-name');
+    //   for(const item of items){
+    //     // console.log(item);
+    //     item.addEventListener('click',function(event){
+    //     //   console.log(event.target.parentNode)
+    //     event.target.parentNode.removeChild(event.target);
+        
+    //     });
+    // }
+
+    const list = document.getElementById('list-items').addEventListener('click',function(event){
+        // console.log(event.target);
+        event.target.parentNode.removeChild(event.target);
+    })
+
+        document.getElementById('btn-add-item').addEventListener('click',function(){
+            // create an element
+            const newElement = document.createElement('li');
+            newElement.classList.add('item-name');
+            newElement.innerText = 'added a new li';
+            // getting the ol of the parent
+            const fullList = document.getElementById('list-items');
+
+            // adding the item
+            fullList.appendChild(newElement);
+            
+        })
+
+
+
+    </script>
+</body>
+</html>
