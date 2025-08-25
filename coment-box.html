@@ -39,7 +39,7 @@
     <script>
         // 1. add event to button
         document.getElementById('btn-post-comment').addEventListener('click',function(){
-            
+
             // 2.get the comment from text area.
             const commentTextArea = document.getElementById('comment-text-area');
             // console.log(commentTextArea.value);
@@ -48,8 +48,6 @@
 
                 const newComment = document.createElement('p');
                 newComment.innerText = commentTextArea.value;
-
-                // console.log(newComment);
 
                 // 4. add the element to the parent or the comment div.
 

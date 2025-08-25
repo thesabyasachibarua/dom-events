@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="delete-title">Delete when found right word</h1>
+    <input type="text" id="text-type" placeholder="write delete">
+    <button id="btn-delete" disabled>Delete Title</button>
+
+
+    <script>
+        document.getElementById('text-type').addEventListener('keyup',function(event){
+            // console.log(event.target.value);
+            const text = event.target.value;
+            const deleteBtn = document.getElementById('btn-delete');
+            if(text.toLowerCase() === 'delete'){
+                deleteBtn.removeAttribute('disabled');
+
+            //   const titleDelete = document.getElementById('delete-title');
+            //   titleDelete.style.display = 'none';
+
+
+            //*** adding extra event to the button:
+
+            deleteBtn.addEventListener('click',function(){
+                const clearInput = document.getElementById('text-type');
+                // clearInput.value = '';
+
+                // removing titile when button clicked.
+                   const titleDelete = document.getElementById('delete-title');
+              titleDelete.style.display = 'none';
+            })
+
+            }
+            else{
+                console.log('something else');
+                deleteBtn.setAttribute('disabled',true);
+            }
+
+        })
+    </script>
+</body>
+
+</html>
