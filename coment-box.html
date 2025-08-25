@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .comment{
+            border: 3px solid rgb(29, 19, 230);
+            background-color: rgba(255, 166, 0, 0.589);
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: 50%;
+        }
+        #comment-text-area{
+            margin: 10px;
+        }
+
+        #btn-post-comment{
+            margin: 10px;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comment box with event:</h1>
+    <h3>Comments for this post</h3>
+    <div id="comment-div">
+        <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, possimus. Iure voluptatem odio quo dicta, porro perspiciatis nostrum, commodi accusantium voluptates eos harum excepturi ipsa in aspernatur eveniet, laudantium animi.</p>
+        <p class="comment">Consequuntur, labore sint. Eos eius voluptatem, cumque sed odit quidem vero accusantium amet dolorum aut perferendis, maxime eaque cupiditate laudantium? Quibusdam cum inventore, excepturi aut at corrupti animi magni? Ullam.</p>
+        <p class="comment">Consequatur porro omnis reiciendis vel eveniet sunt ab doloribus veniam, ipsam repudiandae repellendus obcaecati deleniti inventore, magnam id amet rem eaque tenetur voluptas quasi non officiis ipsum! Obcaecati, minus quia.</p>
+    </div>
+    <br>
+    <textarea name="" id="comment-text-area" cols="50" rows="6" placeholder="enter your comment"></textarea>
+    <br>
+    <button id="btn-post-comment">Post Comment</button>
+
+    <script>
+        // 1. add event to button
+        document.getElementById('btn-post-comment').addEventListener('click',function(){
+            
+            // 2.get the comment from text area.
+            const commentTextArea = document.getElementById('comment-text-area');
+            // console.log(commentTextArea.value);
+
+            // 3.create an element(<p>) that can be added to the comments
+
+                const newComment = document.createElement('p');
+                newComment.innerText = commentTextArea.value;
+
+                // console.log(newComment);
+
+                // 4. add the element to the parent or the comment div.
+
+                newComment.classList.add('comment');
+                const addComment = document.getElementById('comment-div');
+
+                addComment.appendChild(newComment);
+
+                // 5. clean the text area, after adding the comment.
+                commentTextArea.value = '';
+
+
+            
+
+
+        })
+    </script>
+</body>
+</html>

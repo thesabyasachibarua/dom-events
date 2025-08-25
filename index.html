@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+
+        <h1>this is a intro to dom-events</h1>
+        <!-- option 1 to handle events -->
+        <button onclick="console.log(7)">Click Me</button>
+        <button onclick="console.log('I am a disco dancer')">new button</button>
+
+        <!-- option 2 to handle events -->
+
+        <button onclick="makeRed()">Make Red</button>
+        <button onclick="makeBlue()">Make blue</button>
+
+        <!-- option 3 to handle events: get element by Id, then add function to it -->
+
+        <button id="btn-make-purple">Make purple</button>
+
+        <!-- option 4: document.getEmelemtbyId().addEventListener('event type',function) -->
+
+        <button id="make-green">Make Green</button>
+
+
+        <script>
+            function makeRed(){
+                document.body.style.backgroundColor = 'red';
+            }
+
+            function makeBlue(){
+                document.body.style.backgroundColor = 'blue';
+            }
+
+            const makePurple = document.getElementById('btn-make-purple');
+            // console.log(makePurple);
+
+            makePurple.onclick = function make(){
+                document.body.style.backgroundColor = 'purple';
+            }
+
+            document.getElementById('make-green').addEventListener('click',function makeGreenBg(){
+                document.body.style.backgroundColor = 'green';
+            })
+        </script>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+</html>
